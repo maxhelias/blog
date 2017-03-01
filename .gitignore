@@ -11,6 +11,9 @@ composer.lock
 ### IDE ###
 .idea
 
+### NPM ###
+node_modules/
+
 ### Symfony ###
 /app/config/parameters.yml
 /build/
