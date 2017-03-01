@@ -16,7 +16,6 @@ node_modules/
 
 ### Symfony ###
 /app/config/parameters.yml
-/build/
 /phpunit.xml
 /var/*
 !/var/cache
@@ -31,3 +30,4 @@ node_modules/
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
+phpunit.xml.dist
