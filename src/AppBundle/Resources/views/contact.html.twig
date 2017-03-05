@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Me contacter{% endblock %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+    </div>
+    {% if app.session.flashBag.has('notice-mail') %}
+        <div class="row">
+            <div class="col m10 offset-m1 s12">
+                <div id="card-alert" class="card {{ app.session.flashBag.get('color-mail') }} lighten-5">
+                    <div class="card-content {{ app.session.flashBag.get('color-mail') }}-text">
+                        <div class="message {{ app.session.flashBag.get('status-mail') }} center-align">
+                            {{ app.session.flashBag.get('notice-mail') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <div class="row">
+        <div class="col m10 offset-m1 s12">
+            {{ form_start(form, {'attr' : {'class' : 'col s12'}}) }}
+
+                {# Les erreurs générales du formulaire. #}
+                {{ form_errors(form) }}
+
+                <div class="row">
+                    <div class="input-field">
+                        <div>
+                            <i class="material-icons prefix">account_circle</i>
+                            {{ form_label(form.author, "Votre nom", {}) }}
+                            {{ form_widget(form.author, {'attr': {'class' : 'validate'}}) }}
+                        </div>
+
+                        <!--<div class="website">
+                            <i class="material-icons prefix"></i>
+                            <label for="website">Website</label>
+                            <input name="website" id="website" type="text">
+                        </div>-->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field">
+                        <div>
+                            <i class="material-icons prefix">email</i>
+                            {{ form_label(form.email, "E-mail", {}) }}
+                            {{ form_widget(form.email, {'attr': {'class' : 'validate'}}) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field">
+                        <div>
+                            <i class="material-icons prefix">textsms</i>
+                            {{ form_label(form.subject, "Sujet", {}) }}
+                            {{ form_widget(form.subject, {'attr': {'class' : 'validate'}}) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field">
+                        <div>
+                            <i class="material-icons prefix">mode_edit</i>
+                            {{ form_label(form.body, "Message", {}) }}
+                            {{ form_widget(form.body, {'attr': {'class' : 'materialize-textarea'}}) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col m12">
+                        <p class="right-align">
+                            {{ form_widget(form.save, {'attr': {'class': 'btn btn-large waves-effect waves-light', 'value': 'ENVOYER'}}) }}
+                        </p>
+                    </div>
+                </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+{% block javascripts %}
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Compétences{% endblock %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+    </div>
+    <div class="row">
+        <?php foreach ($skills as $skill): ?>
+        {% for skill in skills %}
+        <div class="col s12 m6">
+            <ul class="collection">
+                <li class="collection-item avatar">
+                    <img src="{{ asset('assets/img/' ~ skill.logo) }}" alt="" class="circle">
+                    <span class="title">{{ skill.libelle }}</span>
+                    <div class="progress">
+                        <div class="determinate" style="width: {{ skill.progress }}%"></div>
+                    </div>
+                    <a href="#!" class="secondary-content">{{ skill.progress }}%</a>
+                </li>
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
