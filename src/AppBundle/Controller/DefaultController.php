@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Contact;
 use AppBundle\Form\ContactType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -14,6 +15,7 @@ class DefaultController extends Controller
 {
     /**
      * @Route("/", name="home")
+     * @Method("GET")
      */
     public function indexAction(Request $request)
     {
@@ -27,6 +29,7 @@ class DefaultController extends Controller
 
     /**
      * @Route("/skill", name="skill")
+     * @Method("GET")
      */
     public function skillAction(Request $request)
     {
@@ -41,6 +44,7 @@ class DefaultController extends Controller
 
     /**
      * @Route("/experience", name="experience")
+     * @Method("GET")
      */
     public function experienceAction(Request $request)
     {
@@ -55,6 +59,7 @@ class DefaultController extends Controller
 
     /**
      * @Route("/degree", name="degree")
+     * @Method("GET")
      */
     public function degreeAction(Request $request)
     {
@@ -69,6 +74,7 @@ class DefaultController extends Controller
 
     /**
      * @Route("/project", name="project")
+     * @Method("GET")
      */
     public function projectAction(Request $request)
     {
@@ -77,6 +83,7 @@ class DefaultController extends Controller
 
     /**
      * @Route("/hobbies", name="hobbies")
+     * @Method("GET")
      */
     public function hobbiesAction(Request $request)
     {
@@ -85,6 +92,7 @@ class DefaultController extends Controller
 
     /**
      * @Route("/contact", name="contact")
+     * @Method({"GET", "POST"})
      */
     public function contactAction(Request $request)
     {
